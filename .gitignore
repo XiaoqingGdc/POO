@@ -1,0 +1,5 @@
+.venv/
+\_\_pycache\_\_/
+\*.pyc
+notes\_brutes.csv
+profil\_edustat.csv
