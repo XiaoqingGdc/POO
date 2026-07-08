@@ -21,12 +21,12 @@ POO/
 ### 🔸 Comprendre les bases de la POO challenge 1
 - Définition de classes et création d’objets  
 - Attributs d’instance et de classe  
-- Méthodes, encapsulation, représentation (`__str__`, `__repr__`)  
 - 1er test
 
 ### 🔸 Approfondir les mécanismes avancés challenge 2
  
 - Comparaison d’objets (`__lt__`, `__eq__`)  
+- Méthodes, encapsulation, représentation (`__str__`, `__repr__`)  
 - Tri personnalisé et cohérence des structures  
 - 2e test
 
