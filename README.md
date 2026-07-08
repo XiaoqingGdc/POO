@@ -18,16 +18,17 @@ POO/
 
 ## 🎯 Objectifs 
 
-### 🔸 Comprendre les bases de la POO
+### 🔸 Comprendre les bases de la POO challenge 1
 - Définition de classes et création d’objets  
 - Attributs d’instance et de classe  
 - Méthodes, encapsulation, représentation (`__str__`, `__repr__`)  
+- 1er test
 
-### 🔸 Approfondir les mécanismes avancés
-- Héritage simple et multiple  
-- Polymorphisme et redéfinition de méthodes  
+### 🔸 Approfondir les mécanismes avancés challenge 2
+ 
 - Comparaison d’objets (`__lt__`, `__eq__`)  
 - Tri personnalisé et cohérence des structures  
+- 2e test
 
 ### 🔸 Développer des compétences utiles au métier de Data Analyst
 - Organisation propre du code  
