@@ -42,14 +42,8 @@ POO/
 - Vérification des types avec isinstance()
 - Comprendre polymorphisme : une même méthode → comportements différents
 
-### 🔸 Comprendre Heritage challenge 3
-- Création d’une classe mère AnalyseurPromotion
-- Classes filles spécialisées : AnalyseurGenerale,AnalyseurTechno,AnalyseurPro
-- Utilisation de super()
-- Vérification des types avec isinstance()
-- Comprendre polymorphisme : une même méthode → comportements différents
 
-### 🔸 edustat — Modules, Packages & Méthodes de classe
+### 🔸 edustat(challenge 4) — Modules, Packages & Méthodes de classe
 - comprendre @classmethod & @staticmethod et utiliser dans les classs Eleve Promotion
 - Structuration propre et modulaire d’un projet Python avec l'ensemble de fichier construis depuis début de la semaine
 - Lecture, nettoyage et transformation de données CSV généré par notes.py 
