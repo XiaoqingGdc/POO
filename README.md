@@ -7,15 +7,17 @@ Ce travail s’inscrit dans mon parcours de formation Data Analyst.
 
 ## 📁 Structure du projet
 
+```
 POO/
 ├── challenge_1/        # Challenge 1 : classes, objets, méthodes
 ├── challenge_2/        # Challenge 2 : méthodes spéciales, classe Promotion
 ├── challenge_3/        # Challenge 3 : héritage, polymorphisme, analyseurs
-├── edustat/            # Challenge 4 : modules, packages, classmethod & staticmethod
+├── challenge_4/        # Challenge 4 : modules, packages, classmethod & staticmethod
+├── edustat/            # Challenge 5 : DataProfiler, encapsulation et héritage
 ├── notes.py            # Notes personnelles et exemples de code
 ├── requirements.txt    # Dépendances Python
 └── .gitignore
-
+```
 ---
 
 ## 🎯 Objectifs 
