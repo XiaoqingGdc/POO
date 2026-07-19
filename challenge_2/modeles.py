@@ -71,7 +71,8 @@ histoire=None, svt=None, physique=None,):
         return list_goodatmaths
 
 class Promotion:
-    def __init__(self,etablissement,filiere):
+    def __init__(self,nom,etablissement,filiere):
+        self.nom = nom
         self.etablissement = etablissement
         self.filiere = filiere
         self.eleves =[]
@@ -91,7 +92,7 @@ class Promotion:
     def __contains__(self,eleve):
         return eleve in self.eleves
     
-    def ajouter_eleve(self,eleve):
+    def ajouter(self,eleve):
         return self.eleves.append(eleve)
     
     def moyenne_generale(self):
@@ -115,7 +116,7 @@ class Promotion:
         nb_eleve_total = len(self.eleves)
         if nb_eleve_total == 0:
             return None
-        taux_admission = round(nb_eleve_admise/nb_eleve_total,2)
+        taux_admission = round(nb_eleve_admise/nb_eleve_total*100,2)
         return taux_admission
 
     def classement(self):
@@ -123,7 +124,7 @@ class Promotion:
 
     def rapport(self):
         taux = self.taux_admission()
-        taux_affiche = taux*100 if taux is not None else 0
+        taux_affiche = taux if taux is not None else 0
 
         print (
         f"Nom d'établissement : {self.etablissement}\n"
