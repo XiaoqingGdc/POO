@@ -97,7 +97,7 @@ class Promotion:
     
     def moyenne_generale(self):
         notes_total =[]
-        for eleve in self.eleves:
+        for eleve in self.eleves: 
             if eleve.moyenne() is not None:
                 notes_total.append(eleve.moyenne()) 
         nb_eleve_anote = len(notes_total)
@@ -139,5 +139,3 @@ class Promotion:
             if eleve.id_eleve == identifiant:
                 return eleve
         return None
-
-        
