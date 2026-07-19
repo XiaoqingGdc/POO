@@ -6,7 +6,7 @@ histoire=None, svt=None, physique=None,):
         self.prenom = prenom
         self.nom = nom
         self.etablissement = etablissement
-        self.filiaire = filiere
+        self.filiere = filiere
 
         self.maths = maths
         self.francais = francais
@@ -15,12 +15,51 @@ histoire=None, svt=None, physique=None,):
         self.physique = physique
         self.anglais = anglais 
 
+    @classmethod
+    def depuis_dict(cls, d):
+        def parse(val):
+            try:
+                return float(str(val).replace(",", ".")) if str(val).strip() else None
+            except (ValueError, TypeError):
+                return None
+    
+        return cls(
+            id_eleve = str(d.get("id_eleve", "")).strip(),
+            prenom = str(d.get("prenom", "")).strip(),
+            nom = str(d.get("nom", "")).strip(),
+            etablissement = str(d.get("etablissement", "")).strip(),
+            filiere = cls.normaliser_filiere(str(d.get("filiere", "")).strip()),
+            maths = parse(d.get("maths")),
+            francais = parse(d.get("francais")),
+            anglais = parse(d.get("anglais")),
+            histoire = parse(d.get("histoire")),
+            svt = parse(d.get("svt")),
+            physique = parse(d.get("physique")),
+        )
+    @staticmethod 
+    def normaliser_filiere(filiere_brute):
+        if not filiere_brute:
+            return "Inconnue"
+        correspondances = {
+        "générale": "Générale",
+        "technologique": "Technologique",
+        "professionnelle": "Professionnelle",
+    }
+        return correspondances.get(filiere_brute.strip().lower(), filiere_brute.capitalize())
+
+    @staticmethod
+    def est_note_valide(note):
+        try:
+            return 0.0 <= float(note) <= 20.0
+        except (TypeError, ValueError):
+            return False
+
     def __repr__(self):
-        return f"Eleve(id_eleve = {self.id_eleve}, nom = {self.nom},filiaire = {self.filiaire})"
+        return f"Eleve(id_eleve = {self.id_eleve}, nom = {self.nom},filiere = {self.filiere})"
     
     def __str__(self):
         moyenne = self.moyenne()
-        return f"({self.prenom} {self.nom} | {self.filiaire}| {moyenne}/20)"
+        return f"({self.prenom} {self.nom} | {self.filiere}| {moyenne}/20)"
     
     def __eq__(self,other):
         if not isinstance(other,Eleve):
@@ -128,7 +167,7 @@ class Promotion:
 
         print (
         f"Nom d'établissement : {self.etablissement}\n"
-        f"Nom de filiaire : {self.filiere}\n"
+        f"Nom de filiere : {self.filiere}\n"
         f"Nombre d'élèves dans la Promotion :{len(self.eleves)}\n"
         f"Moyenne général est {self.moyenne_generale()}\n"
         f"Taux d'admission est {taux_affiche} %"
@@ -139,3 +178,14 @@ class Promotion:
             if eleve.id_eleve == identifiant:
                 return eleve
         return None
+
+
+
+if __name__ == "__main__":
+    e = Eleve.depuis_dict({
+        "id_eleve": "TEST", "prenom": "Test", "nom": "Testeur",
+        "etablissement": "Lycée Test", "filiere": "générale",
+        "maths": "15.0"
+    })
+    print(e)
+    print("Module modeles : OK")
