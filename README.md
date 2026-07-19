@@ -1,4 +1,4 @@
-# POO — Programmation Orientée Objet en Python  
+# POO — Programmation Orientée Objet en Python  Edustat
 
 Ce dépôt regroupe les exercices, tests et notes réalisés dans le cadre du brief hebdomadaire consacré à la Programmation Orientée Objet (POO) en Python.  
 Ce travail s’inscrit dans mon parcours de formation Data Analyst.
@@ -48,7 +48,10 @@ POO/
 - Structuration propre et modulaire d’un projet Python avec l'ensemble de fichier construis depuis début de la semaine
 - Lecture, nettoyage et transformation de données CSV généré par notes.py 
 
----
+### 🔸 edustat(challenge 5) — Mini-projet : DataProfiler
+-  un mini projet pour comprendre le dataset, taille,doublon,type, etc, création :profiler.py 
+-  encapsuler ce workflowdans une classe réutilisable : le DataProfiler.
+-  tout assemblé en un outil concret que nous pouvons réutiliser sur n'importe quel DataFrame. 
 
 ## 🚀 Installation
 
